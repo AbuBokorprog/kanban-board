@@ -29,7 +29,7 @@ const App = () => {
     if (sortingOrder === "priority") {
       return b.priority - a.priority;
     } else if (sortingOrder === "title") {
-      return b.title.localeCompare(a.title);
+      return a.title.localeCompare(b.title);
     } else {
       return 0;
     }

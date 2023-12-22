@@ -1,23 +1,26 @@
 import React from "react";
-import { FaPlus } from "react-icons/fa6";
-import { RxBorderDotted } from "react-icons/rx";
+import AS from "../component/UserBoard/AS";
+import Y from "../component/UserBoard/Y";
+import SK from "../component/UserBoard/SK";
+import Ramesh from "../component/UserBoard/Ramesh";
+import Suresh from "../component/UserBoard/Suresh";
 
-const UserTodo = ({ user, data }) => {
-  //   console.log(data);
+const UserTodo = ({ data, user }) => {
+  // userId
+  // id
+  const anoopSharma = data.filter((d) => d.userId === user[0].id);
+  const yogesh = data.filter((d) => d.userId === user[1].id);
+  const shankarK = data.filter((d) => d.userId === user[2].id);
+  const ramesh = data.filter((d) => d.userId === user[3].id);
+  const suresh = data.filter((d) => d.userId === user[4].id);
+
   return (
     <div className="flex items-start justify-between p-4">
-      {user.map((u) => (
-        <div key={u.id} className="flex items-center gap-20 justify-between">
-          <div className="flex gap-2 items-center">
-            <div></div>
-            <div>{u.name}</div>
-          </div>
-          <div className="flex gap-2 items-center">
-            <FaPlus />
-            <RxBorderDotted />
-          </div>
-        </div>
-      ))}
+      <AS data={anoopSharma} user={user} />
+      <Y data={yogesh} user={user} />
+      <Suresh data={suresh} user={user} />
+      <SK data={shankarK} user={user} />
+      <Ramesh data={ramesh} user={user} />
     </div>
   );
 };

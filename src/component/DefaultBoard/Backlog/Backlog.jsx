@@ -4,7 +4,6 @@ import { RxBorderDotted } from "react-icons/rx";
 import { TbCircleDotted } from "react-icons/tb";
 
 const Backlog = ({ backlog, user }) => {
-  console.log(user[0]?.available);
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
