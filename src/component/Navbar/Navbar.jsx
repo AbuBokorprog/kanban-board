@@ -4,12 +4,17 @@ import { IoMoon } from "react-icons/io5";
 import { IoIosArrowUp } from "react-icons/io";
 import { useRef } from "react";
 
-const Navbar = ({ onSorting }) => {
+const Navbar = ({ onSorting, onGrouping }) => {
   let icon = useRef();
+
+  const handleGrouping = (value) => {
+    if (onGrouping) {
+      onGrouping(value);
+    }
+  };
 
   const handleSortingChange = (order) => {
     if (onSorting) {
-      // console.log(order);
       onSorting(order);
     }
   };
@@ -30,8 +35,9 @@ const Navbar = ({ onSorting }) => {
                   name="grouping"
                   className="select select-bordered h-4 w-full"
                   id=""
+                  onChange={(e) => handleGrouping(e.target.value)}
                 >
-                  <option defaultValue="Status">Status</option>
+                  <option value="status">Status</option>
                   <option value="user">User</option>
                   <option value="priority">Priority</option>
                 </select>
@@ -44,7 +50,7 @@ const Navbar = ({ onSorting }) => {
                   id=""
                   onChange={(e) => handleSortingChange(e.target.value)}
                 >
-                  <option defaultValue="priority">Priority</option>
+                  <option value="priority">Priority</option>
                   <option value="title">Title</option>
                 </select>
               </div>

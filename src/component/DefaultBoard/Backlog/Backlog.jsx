@@ -3,23 +3,88 @@ import { FaCircle } from "react-icons/fa";
 import { RxBorderDotted } from "react-icons/rx";
 import { TbCircleDotted } from "react-icons/tb";
 
-const Backlog = (props) => {
+const Backlog = ({ backlog, user }) => {
+  console.log(user[0]?.available);
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
         <div className="flex gap-2 items-center">
           <TbCircleDotted />
-          Backlog {props.backlog.length}
+          Backlog {backlog.length}
         </div>
         <div className="flex gap-2 items-center">
           <FaPlus />
           <RxBorderDotted />
         </div>
       </div>
-      {props.backlog.map((b) => (
+      {backlog.map((b) => (
         <div key={b.id} className="card my-6 w-60 bg-white shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">{b.id}</h2>
+            <div className="flex justify-between items-center">
+              <div>
+                <h2 className="card-title">{b.id}</h2>
+              </div>
+              <div>
+                {b.userId == user[0]?.id ? (
+                  <div className="relative">
+                    <p className="bg-red-500 text-center rounded-full p-1 w-8 h-8">
+                      <small>AS</small>
+                    </p>
+                    {user[0]?.available == "true" ? (
+                      <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    ) : (
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    )}
+                  </div>
+                ) : b.userId == user[1]?.id ? (
+                  <div className="relative">
+                    <p className="bg-red-500 rounded-full text-center p-1 w-8 h-8">
+                      <small>Y</small>
+                    </p>
+                    {user[1]?.available == "true" ? (
+                      <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    ) : (
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    )}
+                  </div>
+                ) : b.userId == user[2]?.id ? (
+                  <div className="relative">
+                    <p className="bg-red-500 text-center rounded-full p-1 w-8 h-8">
+                      <small>SK</small>
+                    </p>
+                    {user[2]?.available == true ? (
+                      <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    ) : (
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    )}
+                  </div>
+                ) : b?.userId == user[3]?.id ? (
+                  <div className="relative">
+                    <p className="bg-red-500 rounded-full text-center px-1 w-8 h-8">
+                      <small>R</small>
+                    </p>
+                    {user[3]?.available == true ? (
+                      <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    ) : (
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    )}
+                  </div>
+                ) : b?.userId == user[4]?.id ? (
+                  <div className="relative">
+                    <div className="bg-red-500 rounded-full text-center px-1 w-8 h-8">
+                      S
+                    </div>
+                    {user[4]?.available == true ? (
+                      <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    ) : (
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full absolute left-[18px] bottom-0"></div>
+                    )}
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
             <p>{b.title}</p>
             <div className="flex items-center gap-1">
               {b.priority == 1 ? (
