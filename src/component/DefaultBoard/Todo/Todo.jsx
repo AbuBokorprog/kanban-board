@@ -1,14 +1,14 @@
 import React from "react";
 import { FaCircle, FaPlus } from "react-icons/fa6";
 import { RxBorderDotted } from "react-icons/rx";
-import { TbCircleDotted } from "react-icons/tb";
+import { MdOutlineCircle } from "react-icons/md";
 
 const Todo = ({ todo, user }) => {
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
-        <div className="flex gap-2 items-center">
-          <TbCircleDotted />
+        <div className="flex gap-2 items-center font-bold">
+          <MdOutlineCircle />
           Todo {todo.length}
         </div>
         <div className="flex gap-2 items-center">
@@ -17,8 +17,8 @@ const Todo = ({ todo, user }) => {
         </div>
       </div>
       {todo.map((b) => (
-        <div key={b.id} className="card my-6 w-60 bg-white shadow-xl">
-          <div className="card-body">
+        <div key={b.id} className="rounded-md my-6 w-60 bg-white shadow-xl">
+          <div className="p-4">
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="card-title">{b.id}</h2>
@@ -85,7 +85,7 @@ const Todo = ({ todo, user }) => {
               </div>
             </div>
             <p>{b.title}</p>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 my-1">
               {b.priority == 1 ? (
                 <svg
                   stroke="currentColor"
@@ -98,6 +98,7 @@ const Todo = ({ todo, user }) => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M2 20h.01"></path>
+                  <path d="M7 20v-4"></path>
                 </svg>
               ) : b.priority == 2 ? (
                 <svg
@@ -112,8 +113,9 @@ const Todo = ({ todo, user }) => {
                 >
                   <path d="M2 20h.01"></path>
                   <path d="M7 20v-4"></path>
+                  <path d="M12 20v-8"></path>
                 </svg>
-              ) : b.priority === 3 ? (
+              ) : b.priority == 3 ? (
                 <svg
                   stroke="currentColor"
                   fill="none"
@@ -127,6 +129,7 @@ const Todo = ({ todo, user }) => {
                   <path d="M2 20h.01"></path>
                   <path d="M7 20v-4"></path>
                   <path d="M12 20v-8"></path>
+                  <path d="M17 20v-12"></path>
                 </svg>
               ) : b.priority == 4 ? (
                 <svg

@@ -1,12 +1,14 @@
 import React from "react";
 import { FaCircle, FaPlus } from "react-icons/fa6";
+import { MdOutlineCircle, MdOutlineIncompleteCircle } from "react-icons/md";
 import { RxBorderDotted } from "react-icons/rx";
+import { TbCircleDotted } from "react-icons/tb";
 
 const High = ({ data, user }) => {
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center font-bold">
           <svg
             stroke="currentColor"
             fill="none"
@@ -22,7 +24,7 @@ const High = ({ data, user }) => {
             <path d="M12 20v-8"></path>
             <path d="M17 20v-12"></path>
           </svg>
-          High
+          High {data.length}
         </div>
         <div className="flex gap-2 items-center">
           <FaPlus />
@@ -30,8 +32,8 @@ const High = ({ data, user }) => {
         </div>
       </div>
       {data.map((b) => (
-        <div key={b.id} className="card my-6 w-60 bg-white shadow-xl">
-          <div className="card-body">
+        <div key={b.id} className="rounded-md my-6 w-60 bg-white shadow-xl">
+          <div className="p-4">
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="card-title">{b.id}</h2>
@@ -97,8 +99,27 @@ const High = ({ data, user }) => {
                 )}
               </div>
             </div>
-            <p>{b.title}</p>
-            <div className="flex items-center gap-1">
+            <div className="flex gap-1">
+              {b.id == "CAM-2" ||
+              b.id == "CAM-3" ||
+              b.id == "CAM-4" ||
+              b.id == "CAM-5" ||
+              b.id == "CAM-8" ? (
+                <div>
+                  <MdOutlineIncompleteCircle className="text-yellow-500 w-4 h-4" />
+                </div>
+              ) : b.id == "CAM-10" || b.id == "CAM-7" ? (
+                <div>
+                  <TbCircleDotted className="w-4 h-4" />
+                </div>
+              ) : (
+                <div>
+                  <MdOutlineCircle className="w-4 h-4" />
+                </div>
+              )}
+              <p>{b.title}</p>
+            </div>
+            <div className="flex items-center gap-1 my-1">
               <div className="flex border justify-between items-center">
                 <FaCircle className="w-3 h-3 text-gray-400" />
                 {b.tag[0]}

@@ -1,14 +1,14 @@
 import React from "react";
 import { FaCircle, FaPlus } from "react-icons/fa6";
 import { RxBorderDotted } from "react-icons/rx";
-import { TbCircleDotted } from "react-icons/tb";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
 const Cancelled = ({ cancelled, user }) => {
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
-        <div className="flex gap-2 items-center">
-          <TbCircleDotted />
+        <div className="flex gap-2 items-center font-bold">
+          <IoCloseCircleSharp className="text-gray-400" />
           Cancelled {cancelled.length}
         </div>
         <div className="flex gap-2 items-center">

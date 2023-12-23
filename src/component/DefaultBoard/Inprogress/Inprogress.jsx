@@ -1,14 +1,14 @@
 import React from "react";
 import { FaCircle, FaPlus } from "react-icons/fa6";
+import { MdOutlineIncompleteCircle } from "react-icons/md";
 import { RxBorderDotted } from "react-icons/rx";
-import { TbCircleDotted } from "react-icons/tb";
 
 const Inprogress = ({ inProgress, user }) => {
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
-        <div className="flex gap-2 items-center">
-          <TbCircleDotted />
+        <div className="flex gap-2 items-center font-bold">
+          <MdOutlineIncompleteCircle className="text-yellow-500" />
           In Progress {inProgress.length}
         </div>
         <div className="flex gap-2 items-center">
@@ -17,8 +17,8 @@ const Inprogress = ({ inProgress, user }) => {
         </div>
       </div>
       {inProgress.map((b) => (
-        <div key={b.id} className="card my-6 w-60 bg-white shadow-xl">
-          <div className="card-body">
+        <div key={b.id} className="rounded-md my-6 w-60 bg-white shadow-xl">
+          <div className="p-4">
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="card-title">{b.id}</h2>
@@ -27,7 +27,7 @@ const Inprogress = ({ inProgress, user }) => {
                 {b.userId == user[0]?.id ? (
                   <div className="relative">
                     <p className="bg-red-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
-                      <small>AS</small>
+                      AS
                     </p>
                     {user[0]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -38,7 +38,7 @@ const Inprogress = ({ inProgress, user }) => {
                 ) : b.userId == user[1]?.id ? (
                   <div className="relative">
                     <p className="bg-red-500 rounded-full text-center p-1 text-[10px] w-6 h-6">
-                      <small>Y</small>
+                      Y
                     </p>
                     {user[1]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -49,7 +49,7 @@ const Inprogress = ({ inProgress, user }) => {
                 ) : b.userId == user[2]?.id ? (
                   <div className="relative">
                     <p className="bg-red-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
-                      <small>SK</small>
+                      SK
                     </p>
                     {user[2]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -60,7 +60,7 @@ const Inprogress = ({ inProgress, user }) => {
                 ) : b?.userId == user[3]?.id ? (
                   <div className="relative">
                     <p className="bg-red-500 rounded-full text-center px-1 text-[10px] w-6 h-6">
-                      <small>R</small>
+                      R
                     </p>
                     {user[3]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -85,7 +85,7 @@ const Inprogress = ({ inProgress, user }) => {
               </div>
             </div>
             <p>{b.title}</p>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 my-1">
               {b.priority == 1 ? (
                 <svg
                   stroke="currentColor"
@@ -98,6 +98,7 @@ const Inprogress = ({ inProgress, user }) => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M2 20h.01"></path>
+                  <path d="M7 20v-4"></path>
                 </svg>
               ) : b.priority == 2 ? (
                 <svg
@@ -112,6 +113,7 @@ const Inprogress = ({ inProgress, user }) => {
                 >
                   <path d="M2 20h.01"></path>
                   <path d="M7 20v-4"></path>
+                  <path d="M12 20v-8"></path>
                 </svg>
               ) : b.priority == 3 ? (
                 <svg
@@ -127,6 +129,7 @@ const Inprogress = ({ inProgress, user }) => {
                   <path d="M2 20h.01"></path>
                   <path d="M7 20v-4"></path>
                   <path d="M12 20v-8"></path>
+                  <path d="M17 20v-12"></path>
                 </svg>
               ) : b.priority == 4 ? (
                 <svg

@@ -1,14 +1,14 @@
 import React from "react";
 import { FaCircle, FaPlus } from "react-icons/fa6";
+import { MdCheckCircle } from "react-icons/md";
 import { RxBorderDotted } from "react-icons/rx";
-import { TbCircleDotted } from "react-icons/tb";
 
 const Done = ({ done, user }) => {
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
-        <div className="flex gap-2 items-center">
-          <TbCircleDotted />
+        <div className="flex gap-2 items-center font-bold">
+          <MdCheckCircle className="text-blue-500" />
           Done {done.length}
         </div>
         <div className="flex gap-2 items-center">
@@ -17,8 +17,8 @@ const Done = ({ done, user }) => {
         </div>
       </div>
       {done.map((b) => (
-        <div key={b.id} className="card my-6 w-60 bg-white shadow-xl">
-          <div className="card-body">
+        <div key={b.id} className="rounded-md my-6 w-60 bg-white shadow-xl">
+          <div className="">
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="card-title">{b.id}</h2>
@@ -85,7 +85,7 @@ const Done = ({ done, user }) => {
               </div>
             </div>
             <p>{b.title}</p>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 my-1">
               {b.priority == 1 ? (
                 <svg
                   stroke="currentColor"

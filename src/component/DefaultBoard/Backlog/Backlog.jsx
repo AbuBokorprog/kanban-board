@@ -7,7 +7,7 @@ const Backlog = ({ backlog, user }) => {
   return (
     <div>
       <div className="flex items-center gap-20 justify-between">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center font-bold">
           <TbCircleDotted />
           Backlog {backlog.length}
         </div>
@@ -17,8 +17,8 @@ const Backlog = ({ backlog, user }) => {
         </div>
       </div>
       {backlog.map((b) => (
-        <div key={b.id} className="card my-6 w-60 bg-white shadow-xl">
-          <div className="card-body">
+        <div key={b.id} className="my-6 rounded-md w-60 bg-white shadow-xl">
+          <div className="p-4">
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="card-title">{b.id}</h2>
@@ -85,7 +85,7 @@ const Backlog = ({ backlog, user }) => {
               </div>
             </div>
             <p>{b.title}</p>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 my-1">
               {b.priority == 1 ? (
                 <svg
                   stroke="currentColor"
@@ -98,6 +98,7 @@ const Backlog = ({ backlog, user }) => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M2 20h.01"></path>
+                  <path d="M7 20v-4"></path>
                 </svg>
               ) : b.priority == 2 ? (
                 <svg
@@ -112,6 +113,7 @@ const Backlog = ({ backlog, user }) => {
                 >
                   <path d="M2 20h.01"></path>
                   <path d="M7 20v-4"></path>
+                  <path d="M12 20v-8"></path>
                 </svg>
               ) : b.priority == 3 ? (
                 <svg
@@ -127,6 +129,7 @@ const Backlog = ({ backlog, user }) => {
                   <path d="M2 20h.01"></path>
                   <path d="M7 20v-4"></path>
                   <path d="M12 20v-8"></path>
+                  <path d="M17 20v-12"></path>
                 </svg>
               ) : b.priority == 4 ? (
                 <svg
