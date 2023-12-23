@@ -17,7 +17,7 @@ const Done = ({ done, user }) => {
         </div>
       </div>
       {done.map((b) => (
-        <div key={b.id} className="rounded-md my-6 w-60 bg-white shadow-xl">
+        <div key={b.id} className="rounded-md my-6 w-60 shadow-xl">
           <div className="">
             <div className="flex justify-between items-center">
               <div>

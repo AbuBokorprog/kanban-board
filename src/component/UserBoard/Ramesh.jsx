@@ -27,7 +27,7 @@ const Ramesh = ({ user, data }) => {
         </div>
       </div>
       {data.map((b) => (
-        <div key={b.id} className="rounded-md my-6 w-60 bg-white shadow-xl">
+        <div key={b.id} className="rounded-md my-6 w-60 shadow-xl">
           <div className="p-4">
             <h2 className="card-title">{b.id}</h2>
             <div className="flex gap-1">

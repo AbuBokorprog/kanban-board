@@ -17,7 +17,7 @@ const Todo = ({ todo, user }) => {
         </div>
       </div>
       {todo.map((b) => (
-        <div key={b.id} className="rounded-md my-6 w-60 bg-white shadow-xl">
+        <div key={b.id} className="rounded-md my-6 w-60 shadow-xl">
           <div className="p-4">
             <div className="flex justify-between items-center">
               <div>

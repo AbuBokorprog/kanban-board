@@ -17,7 +17,7 @@ const Cancelled = ({ cancelled, user }) => {
         </div>
       </div>
       {cancelled.map((b) => (
-        <div key={b.id} className="card my-6 w-60 bg-white shadow-xl">
+        <div key={b.id} className="card my-6 w-60  shadow-xl">
           <div className="card-body">
             <div className="flex justify-between items-center">
               <div>

@@ -1,12 +1,11 @@
 import { RxMixerHorizontal } from "react-icons/rx";
 import { IoMoon } from "react-icons/io5";
-
-import { IoIosArrowUp } from "react-icons/io";
-import { useRef } from "react";
+import { MdSunny } from "react-icons/md";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useEffect, useRef, useState } from "react";
 
 const Navbar = ({ onSorting, onGrouping }) => {
-  let icon = useRef();
-
+  const [isDropdown, setIsDropdown] = useState(false);
   const handleGrouping = (value) => {
     if (onGrouping) {
       onGrouping(value);
@@ -19,14 +18,36 @@ const Navbar = ({ onSorting, onGrouping }) => {
     }
   };
 
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
+  const dropdownHandler = () => {
+    setIsDropdown(!isDropdown);
+  };
+
   return (
-    <div className="bg-white w-full h-full border-b-2 px-4">
+    <div className={` w-full h-full border-b-2 px-4`}>
       <div className="flex justify-between items-center">
         <div>
-          <details className="dropdown bg-white shadow-lg">
-            <summary className="m-1 btn">
+          <details className="dropdown  shadow-lg" onClick={dropdownHandler}>
+            <summary className="m-1 btn ">
               <RxMixerHorizontal />
-              Display <IoIosArrowUp />
+              Display {isDropdown ? <IoIosArrowDown /> : <IoIosArrowUp />}
             </summary>
             <div className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-64">
               <div className="flex gap-20 justify-between items-center">
@@ -57,8 +78,18 @@ const Navbar = ({ onSorting, onGrouping }) => {
             </div>
           </details>
         </div>
-        <div>
-          <IoMoon className="w-6 h-6" />
+        <div className="flex-none">
+          <button className="btn btn-square btn-ghost">
+            <label className="swap swap-rotate w-12 h-12">
+              <input
+                type="checkbox"
+                onChange={handleToggle}
+                checked={theme === "light" ? false : true}
+              />
+              <MdSunny className="w-8 h-8 swap-on" />
+              <IoMoon className="w-8 h-8 swap-off" />
+            </label>
+          </button>
         </div>
       </div>
     </div>
