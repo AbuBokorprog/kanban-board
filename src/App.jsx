@@ -47,7 +47,7 @@ const App = () => {
       ) : grouping == "user" ? (
         <UserTodo user={user} data={ticket.sort(sortTickets)} />
       ) : grouping === "priority" ? (
-        <Priority />
+        <Priority user={user} data={ticket.sort(sortTickets)} />
       ) : (
         <p>NOT FOUND</p>
       )}

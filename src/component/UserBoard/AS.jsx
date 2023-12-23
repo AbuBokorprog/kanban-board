@@ -18,7 +18,7 @@ const AS = ({ user, data }) => {
               <div className="w-2 h-2 bg-yellow-500 rounded-full absolute left-[18px] bottom-0"></div>
             )}
           </div>
-          <h2 className="font-bold">Anoop sharma</h2>
+          <h2 className="font-bold">Anoop sharma {data.length}</h2>
         </div>
         <div className="flex gap-2 items-center">
           <FaPlus />
