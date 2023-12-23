@@ -2,6 +2,8 @@
 
 Welcome to the Kanban Board project! This application provides a visual and interactive Kanban board for managing tickets with various grouping and sorting options.
 
+![Kanban Board Demo](/public/kanban.png)
+
 ## Features
 
 ### 1. Dynamic Grouping
@@ -39,6 +41,4 @@ The application saves the user's view state even after a page reload, providing 
 
 ## Demo
 
-View a live demo of the Kanban Board: [Demo Link](https://app.netlify.com/sites/your-demo-site-name)
-
-![Kanban Board Demo](/kanban.png)
+View a live demo of the Kanban Board: [Demo Link](https://6586ca310888fb7c5706aa00--curious-rugelach-60a72f.netlify.app/)
