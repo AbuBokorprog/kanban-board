@@ -26,7 +26,7 @@ const Backlog = ({ backlog, user }) => {
               <div>
                 {b.userId == user[0]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 text-[10px] text-center rounded-full p-1 w-6 h-6">
+                    <p className="bg-orange-500 text-[10px] text-center rounded-full p-1 w-6 h-6">
                       AS
                     </p>
                     {user[0]?.available == "true" ? (
@@ -37,7 +37,7 @@ const Backlog = ({ backlog, user }) => {
                   </div>
                 ) : b.userId == user[1]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 text-[10px] text-center rounded-full p-1 w-6 h-6">
+                    <p className="bg-red-500 text-[12px] text-center rounded-full p-1 w-6 h-6">
                       Y
                     </p>
                     {user[1]?.available == "true" ? (
@@ -59,7 +59,7 @@ const Backlog = ({ backlog, user }) => {
                   </div>
                 ) : b?.userId == user[3]?.id ? (
                   <div className="relative">
-                    <p className="bg-green-500 text-[12px] rounded-full text-center px-1 w-6 h-6">
+                    <p className="bg-green-500 text-[14px] rounded-full text-center px-1 w-6 h-6">
                       R
                     </p>
                     {user[3]?.available == true ? (

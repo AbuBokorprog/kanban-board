@@ -26,7 +26,7 @@ const Inprogress = ({ inProgress, user }) => {
               <div>
                 {b.userId == user[0]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
+                    <p className="bg-green-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
                       AS
                     </p>
                     {user[0]?.available == true ? (
@@ -37,7 +37,7 @@ const Inprogress = ({ inProgress, user }) => {
                   </div>
                 ) : b.userId == user[1]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 rounded-full text-center p-1 text-[10px] w-6 h-6">
+                    <p className="bg-red-500 rounded-full text-center p-1 text-[12px] w-6 h-6">
                       Y
                     </p>
                     {user[1]?.available == true ? (
@@ -48,7 +48,7 @@ const Inprogress = ({ inProgress, user }) => {
                   </div>
                 ) : b.userId == user[2]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
+                    <p className="bg-yellow-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
                       SK
                     </p>
                     {user[2]?.available == true ? (
@@ -59,7 +59,7 @@ const Inprogress = ({ inProgress, user }) => {
                   </div>
                 ) : b?.userId == user[3]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 rounded-full text-center px-1 text-[10px] w-6 h-6">
+                    <p className="bg-blue-500 rounded-full text-center px-1 text-[10px] w-6 h-6">
                       R
                     </p>
                     {user[3]?.available == true ? (
@@ -70,7 +70,7 @@ const Inprogress = ({ inProgress, user }) => {
                   </div>
                 ) : b?.userId == user[4]?.id ? (
                   <div className="relative">
-                    <div className="bg-red-500 rounded-full text-center px-1 text-[10px] w-6 h-6">
+                    <div className="bg-pink-500 rounded-full text-center px-1 text-[14px] w-6 h-6">
                       S
                     </div>
                     {user[4]?.available == true ? (

@@ -27,7 +27,7 @@ const Todo = ({ todo, user }) => {
                 {b.userId == user[0]?.id ? (
                   <div className="relative">
                     <p className="bg-red-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
-                      <small>AS</small>
+                      AS
                     </p>
                     {user[0]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -37,8 +37,8 @@ const Todo = ({ todo, user }) => {
                   </div>
                 ) : b.userId == user[1]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 rounded-full text-center p-1 text-[10px] w-6 h-6">
-                      <small>Y</small>
+                    <p className="bg-pink-500 rounded-full text-center p-1 text-[12px] w-6 h-6">
+                      Y
                     </p>
                     {user[1]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -48,8 +48,8 @@ const Todo = ({ todo, user }) => {
                   </div>
                 ) : b.userId == user[2]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
-                      <small>SK</small>
+                    <p className="bg-purple-500 text-center rounded-full p-1 text-[10px] w-6 h-6">
+                      SK
                     </p>
                     {user[2]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -59,8 +59,8 @@ const Todo = ({ todo, user }) => {
                   </div>
                 ) : b?.userId == user[3]?.id ? (
                   <div className="relative">
-                    <p className="bg-red-500 rounded-full text-center px-1 text-[10px] w-6 h-6">
-                      <small>R</small>
+                    <p className="bg-green-500 rounded-full text-center px-1 text-[14px] w-6 h-6">
+                      R
                     </p>
                     {user[3]?.available == true ? (
                       <div className="w-2 h-2 bg-green-500 rounded-full absolute left-[18px] bottom-0"></div>
@@ -70,7 +70,7 @@ const Todo = ({ todo, user }) => {
                   </div>
                 ) : b?.userId == user[4]?.id ? (
                   <div className="relative">
-                    <div className="bg-red-500 rounded-full text-center px-1 text-[10px] w-6 h-6">
+                    <div className="bg-blue-500 rounded-full text-center px-1 text-[14px] w-6 h-6">
                       S
                     </div>
                     {user[4]?.available == true ? (

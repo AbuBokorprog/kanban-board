@@ -36,3 +36,9 @@ Tickets are categorized into priority levels:
 ### 5. Persistence
 
 The application saves the user's view state even after a page reload, providing a seamless experience.
+
+## Demo
+
+View a live demo of the Kanban Board: [Demo Link](https://app.netlify.com/sites/your-demo-site-name)
+
+![Kanban Board Demo](/kanban.png)
